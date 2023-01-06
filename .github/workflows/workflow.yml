@@ -1,0 +1,34 @@
+on:
+  push:
+    branches-ignore:
+      - 'ga-ignore-*'
+
+env:
+  BASE_URL: "/EpiPlanneur/"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.0.0
+        with:
+          fetch-depth: 0
+      - name: Npm install
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ./dist
+      - name: GASNewsletter
+        uses: Nathandelenclos/GASnewsletter-actions@1.0.3
+        with:
+          base_url: 'https://script.google.com/macros/s/AKfycbxa6awnYOz_-13orRJPwPcu78Cf3t5EGS4yGlHkSIXuzn3hMOgASseNCBGd9D6fVSYvfg/exec'
+          title: 'Project Update'
+          subtitle: ${{ github.event.repository.name }}
+          img: 'https://opengraph.githubassets.com/28bc32c10307ac9a91a585056d0e2db0/Nathandelenclos/Nathandelenclos'
+          updateTitle: ${{ github.event.head_commit.message }}
+          link: 'https://nathandelenclos.github.io/EpiPlanneur/'
+          password: ${{ secrets.NEWSLETTER_PASSWORD }}
