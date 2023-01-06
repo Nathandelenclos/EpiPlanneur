@@ -1,12 +1,9 @@
-# epiPlanneur
-
+# EpiPlanneur
 
 ***
-[![version](https://img.shields.io/badge/Version-1.0-vert)](https://github.com/Nathandelenclos/GASNewsletter)
+[![version](https://img.shields.io/badge/Version-1.0-vert)](https://github.com/Nathandelenclos/EpiPlanneur)
 
-This project Is Google App Script project deployed in webapp.
-This Project is platform for subscribe, unsubscribe and post newsletter with http request. <br>
-You can check this repo [GASNewsletter-actions](https://github.com/Nathandelenclos/GASnewsletter-actions)
+This Project is web page for plan 2e year to Epitech in 2023.
 ***
 ## Table of Contents
 
@@ -20,8 +17,8 @@ You can check this repo [GASNewsletter-actions](https://github.com/Nathandelencl
 ## About
 <div id="about"></div>
 
-This project Is Google App Script project deployed in webapp.<br>
-This Project is platform for subscribe, unsubscribe and post newsletter with http request.
+This project is a web page that allows you to calculate the credits at the end of the year according to the modules you select.
+For the moment this tool is only available for the tek2 of the year 2023.
 
 ***
 
@@ -30,36 +27,25 @@ This Project is platform for subscribe, unsubscribe and post newsletter with htt
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Nathandelenclos/GASNewsletter.git
+   git clone https://github.com/Nathandelenclos/EpiPlanneur.git
    ```
 2. Install packages
     ```shell
     npm install
     ```
-3. Login at Google with clasp
+3. Start in dev
     ```shell
-    clasp login
+    npm run dev
     ```
-4. Create project Google Apps Script
-    ```shell
-    clasp create
-    ```
-   Select webapp.
-5. Push Javascript file to Google Apps Script
-   ```shell
-   clasp push
-   ```
-6. Go to Google App Script & deploy on webapp.
-7. On script properties add keys `PASSWORD` (password for send newsletter) and `SS_DATABASE` (id of spreadsheet where content all mails) (this spreadsheet must content a sheet named `MAILS`)
-
 ***
 
 ## Languages
 <div id="languages"></div>
 
-[![C](https://img.shields.io/badge/-Google%20Apps%20Script-vert)](https://github.com/dktunited/jetlane-gmao/search?l=javascript)
-[![C](https://img.shields.io/badge/-Javascript-yellow)](https://github.com/dktunited/jetlane-gmao/search?l=javascript)
-[![C](https://img.shields.io/badge/-HTML-red)](https://github.com/dktunited/jetlane-gmao/search?l=javascript)
+![](https://img.shields.io/badge/-VueJS-vert)
+![](https://img.shields.io/badge/-Javascript-yellow)
+![](https://img.shields.io/badge/-HTML-red)
+![](https://img.shields.io/badge/-CSS-blue)
 
 ***
 
@@ -75,4 +61,3 @@ This Project is platform for subscribe, unsubscribe and post newsletter with htt
 
 [ISC](LICENSE) © Nathan DELENCLOS
 
-This template should help get you started developing with Vue 3 in Vite.
