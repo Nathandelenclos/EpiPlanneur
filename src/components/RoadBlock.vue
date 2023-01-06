@@ -112,8 +112,10 @@ tr {
 }
 .content {
   background-color: var(--secondary-bg);
+  color: black;
 }
 .content-child {
   background-color: var(--third-bg);
+  color: black;
 }
 </style>
