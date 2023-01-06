@@ -52,7 +52,7 @@ For the moment this tool is only available for the tek2 of the year 2023.
 ## Contact
 <div id="contact"></div>
 
--  [Nathan DELENCLOS](mailto:nathan.delenclos@epitech.eu) - Developer
+-  [Nathan DELENCLOS](https://nathandelenclos.github.io/Nathandelenclos/) - Developer [![](https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/Nathandelenclos)
 
 ***
 
