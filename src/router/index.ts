@@ -8,7 +8,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: Tek2,
+      component: Tek3,
     },
     {
       path: "/tek2",
