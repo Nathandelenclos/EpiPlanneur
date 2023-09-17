@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import App from "@/App.vue";
-import Tek1 from "@/views/Tek1.vue";
 import Tek2 from "@/views/Tek2.vue";
+import Tek3 from "@/views/Tek3.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,14 +11,14 @@ const router = createRouter({
       component: Tek2,
     },
     {
-      path: "/tek1",
-      name: "tek1",
-      component: Tek1
+      path: "/tek2",
+      name: "tek2",
+      component: Tek2
     },
     {
-        path: "/tek2",
-        name: "tek2",
-        component: Tek2
+        path: "/tek3",
+        name: "tek3",
+        component: Tek3
     }
   ],
 });

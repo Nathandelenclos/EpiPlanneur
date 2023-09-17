@@ -7,8 +7,8 @@ export default {
     return {
       roadBlock: [
         {
-          title: "Foundation (13req)",
-          require: 13,
+          title: "Foundation (8req)",
+          require: 8,
           colors: {
             "--primary-bg": "#4472c4",
             "--secondary-bg": "#b4c6e7",
@@ -16,24 +16,16 @@ export default {
           },
           modules: [
             {
-              title: "B-CCP-400",
-              credit: 4,
-            },
-            {
-              title: "B-NWP-400",
-              credit: 5,
-            },
-            {
-              title: "B-OOP-400",
+              title: "B-CCP-500",
               credit: 6,
             },
             {
-              title: "B-PDG-300",
-              credit: 5,
+              title: "B-DEV-500",
+              credit: 6,
             },
             {
-              title: "B-YEP-400",
-              credit: 5,
+              title: "B-FUN-500",
+              credit: 6,
             },
           ],
         },
@@ -47,38 +39,26 @@ export default {
           },
           modules: [
             {
-              title: "B-CNA-410",
-              credit: 2,
-            },
-            {
-              title: "B-MAT-400",
+              title: "B-AIA-500",
               credit: 3,
             },
             {
-              title: "B-ASM-400",
-              credit: 2,
+              title: "B-DOP-500",
+              credit: 3,
             },
             {
-              title: "B-FUN-400",
-              credit: 4,
+              title: "B-CNA-500",
+              credit: 3,
             },
             {
-              title: "B-DOP-400",
-              credit: 2,
-            },
-            {
-              title: "B-PSU-400",
-              credit: 5,
-            },
-            {
-              title: "B-SEC-400",
-              credit: 2,
+              title: "B-SEC-500",
+              credit: 3,
             },
           ],
         },
         {
-          title: "Innovation (4req)",
-          require: 4,
+          title: "Innovation (6req)",
+          require: 6,
           colors: {
             "--primary-bg": "#70ad47",
             "--secondary-bg": "#c6e0b4",
@@ -86,26 +66,26 @@ export default {
           },
           modules: [
             {
-              title: "B-INN-400",
+              title: "B-INN-500",
               credit: 8,
             },
             {
               title: "B-JAM-001",
-              credit: 3,
+              credit: 1,
             },
             {
               title: "B-CUS-00x",
               credit: 2,
             },
             {
-              title: "B-EPI-010",
-              credit: 6,
+              title: "B-PRO-500",
+              credit: 7,
             },
           ],
         },
         {
-          title: "Soft Skills (3req)",
-          require: 3,
+          title: "Soft Skills (4req)",
+          require: 4,
           colors: {
             "--primary-bg": "#ed7d31",
             "--secondary-bg": "#f8cbad",
@@ -113,16 +93,20 @@ export default {
           },
           modules: [
             {
-              title: "B-PRO-400",
-              credit: 2,
-            },
-            {
               title: "B-PCP-000",
               credit: 2,
             },
             {
-              title: "B-PMP-400",
+              title: "B-DES-500",
+              credit: 2,
+            },
+            {
+              title: "B-SVR-500",
               credit: 3,
+            },
+            {
+              title: "B-PRO-510",
+              credit: 2,
             },
           ],
         },
@@ -133,7 +117,7 @@ export default {
 </script>
 
 <template>
-  <h1>Tek1</h1>
+  <h1>Tek3</h1>
   <div class="home">
     <RoadBlock v-for="road in roadBlock"
        class="roadblock"
