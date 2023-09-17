@@ -4,8 +4,8 @@
 <template>
   <main>
     <nav>
-      <RouterLink to="/tek1"><button>Tek1</button></RouterLink>
       <RouterLink to="/tek2"><button>Tek2</button></RouterLink>
+      <RouterLink to="/tek3"><button>Tek3</button></RouterLink>
     </nav>
     <RouterView/>
   </main>
