@@ -120,6 +120,7 @@ export default {
   <h1>Tek2</h1>
   <div class="home">
     <RoadBlock v-for="road in roadBlock"
+       class="roadblock"
       :title="road.title"
       :modules="road.modules"
       :require-credit="road.require"
@@ -138,5 +139,8 @@ h1 {
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+.roadblock {
+  margin-bottom: 50px;
 }
 </style>
