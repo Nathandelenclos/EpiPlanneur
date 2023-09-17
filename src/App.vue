@@ -1,16 +1,21 @@
 <script setup lang="ts">
-import HomeView from "@/views/HomeView.vue";
 </script>
 
 <template>
   <main>
-    <HomeView />
+    <nav>
+      <RouterLink to="/tek1"><button>Tek1</button></RouterLink>
+      <RouterLink to="/tek2"><button>Tek2</button></RouterLink>
+    </nav>
+    <RouterView/>
   </main>
 </template>
 
 <style scoped>
 nav {
-  width: 100%;
-  background-color: blue;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 </style>

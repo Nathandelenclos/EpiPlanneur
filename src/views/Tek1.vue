@@ -133,6 +133,7 @@ export default {
 </script>
 
 <template>
+  <h1>Tek1</h1>
   <div class="home">
     <RoadBlock v-for="road in roadBlock"
       :title="road.title"
@@ -144,9 +145,14 @@ export default {
 </template>
 
 <style scoped>
+h1 {
+  width: 100%;
+  text-align: center;
+}
 .home {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 </style>
