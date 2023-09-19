@@ -68,6 +68,7 @@ export default {
             {
               title: "B-INN-500",
               credit: 8,
+              isChangeable: true,
             },
             {
               title: "B-JAM-001",
@@ -119,8 +120,9 @@ export default {
 <template>
   <h1>Tek3</h1>
   <div class="home">
-    <RoadBlock v-for="road in roadBlock"
-       class="roadblock"
+    <RoadBlock
+      v-for="road in roadBlock"
+      class="roadblock"
       :title="road.title"
       :modules="road.modules"
       :require-credit="road.require"
