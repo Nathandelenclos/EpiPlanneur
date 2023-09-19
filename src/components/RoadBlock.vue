@@ -99,6 +99,7 @@ export default {
       this.$emit("select", {
         selectTotal,
         credit: module.credit,
+        isSelected: module.isSelected,
       });
     },
   },

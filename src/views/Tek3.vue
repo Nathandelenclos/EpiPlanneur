@@ -122,7 +122,11 @@ export default {
     };
   },
   methods: {
-    updateGrandTotal({ credit }) {
+    updateGrandTotal({ credit, isSelected }) {
+      if (!isSelected) {
+        this.grandTotal -= +credit;
+        return;
+      }
       this.grandTotal += +credit;
     },
   },
