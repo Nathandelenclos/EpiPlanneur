@@ -9,12 +9,29 @@
         <th>Credit</th>
         <th>Select</th>
       </tr>
-      <tr v-for="(module, index) in modules">
+      <tr
+        v-for="(module, index) in modules"
+        v-bind:key="`${module.title}-${index}`"
+      >
         <td>{{ module.title }}</td>
-        <td :class="index % 2 ? 'content-child' : 'content'">{{ module.credit }}</td>
+        <td
+          v-if="!module.isChangeable"
+          :class="index % 2 ? 'content-child' : 'content'"
+        >
+          {{ module.credit }}
+        </td>
+        <td v-else>
+          <input
+            type="number"
+            min="0"
+            max="8"
+            :class="index % 2 ? 'content-child' : 'content'"
+            @input="updateModuleCredits(module, $event.target.value)"
+          />
+        </td>
         <td :class="index % 2 ? 'content-child' : 'content'">
           <input
-            @click="select(module.credit, $event)"
+            @click="select(module, $event)"
             type="checkbox"
             name="select"
             id="select"
@@ -25,7 +42,7 @@
         <tr>
           <th>Total</th>
           <th>{{ totalCredit(modules) }}</th>
-          <th class="select-credit">0</th>
+          <th class="select-credit">{{ total }}</th>
         </tr>
       </tfoot>
     </table>
@@ -34,7 +51,7 @@
 
 <script>
 const hex2rgba = (hex, alpha = 1) => {
-  const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
+  const [r, g, b] = hex.match(/\w\w/g).map((x) => parseInt(x, 16));
   return `rgba(${r},${g},${b},${alpha})`;
 };
 export default {
@@ -46,31 +63,42 @@ export default {
     requireCredit: Number,
     colors: Object,
   },
+
   data() {
     return {
+      total: 0,
       totalCredit(modules) {
         return modules.reduce((acc, actual) => {
-          return acc + actual.credit;
+          return acc + +actual.credit;
         }, 0);
       },
     };
   },
   methods: {
-    select(data, e) {
+    updateModuleCredits(module, newValue) {
+      if (module.isSelected) {
+        this.total -= +module.credit;
+        this.total += +newValue;
+      }
+      module.credit = newValue;
+    },
+    select(module, e) {
       const selectTotal = this.$el.querySelector(".select-credit");
       if (e.target.checked) {
-        selectTotal.innerHTML = +selectTotal.innerHTML + data;
+        this.total += +module.credit;
+        module.isSelected = true;
       } else {
-        selectTotal.innerHTML = +selectTotal.innerHTML - data;
+        this.total -= +module.credit;
+        module.isSelected = false;
       }
-      if (+selectTotal.innerHTML < +this.$props.requireCredit) {
+      if (+this.total < +this.$props.requireCredit) {
         selectTotal.style.backgroundColor = "red";
       } else {
         selectTotal.style.backgroundColor = "green";
       }
       this.$emit("select", {
         selectTotal,
-        credit: data,
+        credit: module.credit,
       });
     },
   },
