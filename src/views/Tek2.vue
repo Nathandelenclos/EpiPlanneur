@@ -127,7 +127,17 @@ export default {
           ],
         },
       ],
+      grandTotal: 0,
     };
+  },
+  methods: {
+    updateGrandTotal({ credit, isSelected }) {
+      if (!isSelected) {
+        this.grandTotal -= +credit;
+        return;
+      }
+      this.grandTotal += +credit;
+    },
   },
 };
 </script>
@@ -135,14 +145,18 @@ export default {
 <template>
   <h1>Tek2</h1>
   <div class="home">
-    <RoadBlock v-for="road in roadBlock"
-       class="roadblock"
-      :title="road.title"
-      :modules="road.modules"
-      :require-credit="road.require"
-      :colors="road.colors"
+    <RoadBlock
+        v-for="(road, index) in roadBlock"
+        :key="index"
+        class="roadblock"
+        :title="road.title"
+        :modules="road.modules"
+        :require-credit="road.require"
+        :colors="road.colors"
+        @select="updateGrandTotal"
     />
   </div>
+  <p class="center">Total Credit: {{ grandTotal }}</p>
 </template>
 
 <style scoped>
@@ -156,6 +170,14 @@ h1 {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
+.center {
+  text-align: center;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .roadblock {
   margin-bottom: 50px;
 }

@@ -79,6 +79,14 @@ export default {
       if (module.isSelected) {
         this.total -= +module.credit;
         this.total += +newValue;
+        this.$emit("select", {
+          credit: module.credit,
+          isSelected: false,
+        });
+        this.$emit("select", {
+          credit: newValue,
+          isSelected: true,
+        });
       }
       module.credit = newValue;
     },
@@ -99,6 +107,7 @@ export default {
       this.$emit("select", {
         selectTotal,
         credit: module.credit,
+        isSelected: module.isSelected,
       });
     },
   },
